@@ -4,6 +4,12 @@ var Wishable = Wishable || {
   page_params:      {},
 
   init:   function init($, $context) {
+    if (Wishable.cordova_present) {
+      $('body').addClass('cordova');
+    }
+    else {
+      $('body').addClass('webapp');
+    }
 
     $('#create-wish-form').validate({
       rules: {
@@ -181,6 +187,10 @@ var Wishable = Wishable || {
 
       if ($page.attr('id') == 'wishes') {
         Wishable.wishes.index();
+      }
+
+      if ($page.attr('id') == 'my-wishes') {
+        Wishable.wishes.my_wishes();
       }
     }
   });

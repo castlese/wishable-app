@@ -147,7 +147,7 @@ html lang='en-US'
 
               #wish-list
 
-    #donate.transparent data-role="page"                
+    #donate.transparent data-role="page"
       div data-role="content"
         .top-menu
         .wrapper
@@ -168,13 +168,12 @@ html lang='en-US'
                     .row.field
                       .small-12.columns
                         label for='donation-amount' Your donation
-                        input#donation-amount name='amount' type='text' 
+                        input#donation-amount name='amount' type='text'
                         // Maybe substitute a slider control here?
                     .row.field
                       .small-12.columns
                         .btn
                           input#donation-submit type='submit' value='Donate'
-
 
     #my-wishes.transparent data-role="page"
       div data-role="content"
@@ -247,7 +246,30 @@ html lang='en-US'
           .wish-donated data-content='donated'
 
           h2 Wish by
+          .wish-user-image
           .wish-user-name data-content='user.name'
+
+    ///////////////////// Show wish summary
+    script type='text/html' id='wish-summary'
+      .row
+        .small-12.large-6.large-offset-3.columns.end
+          .wish-summary
+            .row
+              .small-12.columns
+                h1.wish-title data-content='title'
+            .row
+              .small-6.columns
+                .wish-summary-cost
+                  span.label Goal
+                  span.value data-content='cost'
+              .small-6.columns
+                .wish-summary-donated
+                  span.label Donations
+                  span.value data-content='percent_of_goal'
+            .row
+              .small-12.columns.nudge.down.text-right
+                a.action href='#' Donate
+
 
   // PhoneGap Build files necessary for the app.
   // These are not required or present in the web app.
