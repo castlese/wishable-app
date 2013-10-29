@@ -58,7 +58,7 @@ html lang='en-US'
                   h1.text-center Login
               .row
                 .small-12.columns
-                  form#login
+                  form#login-form
                     .row.field
                       .small-12.columns
                         label for='login-username' User name or email
@@ -71,7 +71,10 @@ html lang='en-US'
                       .small-12.columns
                         .btn
                           input#login-submit type='submit' value='Log in'
+                    .row
+                      .small-6.columns
                         a.alt href='#create-account' Create an account
+                      .small-6.columns.text-right
                         a.cancel href='#' data-rel='back' Cancel
 
     #create-account.transparent data-role="page"
@@ -97,8 +100,11 @@ html lang='en-US'
                     .row.submit
                       .small-12.columns
                         .btn
-                          input#user-submit type='submit' value='Create my account'
+                          input#login-submit type='submit' value='Create my account'
+                    .row
+                      .small-6.columns
                         a.alt href='#login' I have an account
+                      .small-6.columns.text-right
                         a.cancel href='#' data-rel='back' Cancel
 
     #post-wish.transparent data-role="page"
@@ -109,11 +115,10 @@ html lang='en-US'
             .region.region-main-content
               .row
                 .small-12.columns
-                  h1 Create your wish
+                  h1.text-center Create your wish
                   p Tell people about your wish, what would you like to do? Why does it mean so much to you?
-              .row
-                .small-12.columns
-                  form#create_wish
+
+                  form#create-wish-form
                     .row.field
                       .small-12.columns
                         label for='create-wish-title' Title
@@ -126,12 +131,12 @@ html lang='en-US'
                       .small-12.columns
                         label for='wish-text' Tell us about your wish
                         textarea#wish-text name='text' rows='5' cols='40'
-                    .row.field
+                    .row.submit
                       .small-12.columns
-                        .submit
-                          input type='submit' value='create your wish'
-                          a.cancel data-rel='back' Cancel
-                           
+                        input type='submit' value='create your wish'
+                    .row
+                      .small-12.columns.text-right
+                        a.cancel data-rel='back' Cancel
 
     #wishes.transparent data-role="page"
       div data-role="content"
@@ -139,6 +144,7 @@ html lang='en-US'
         .wrapper
           .page-content
             .region.region-main-content
+<<<<<<< HEAD
                   #wish-list
 
     #donate.transparent data-role="page"                
@@ -165,6 +171,20 @@ html lang='en-US'
                         input#donation-submit type='submit' value='Donate'
 
 
+    #my-wishes.transparent data-role="page"
+      div data-role="content"
+        .top-menu
+        .wrapper
+          .page-content
+            .region.region-main-content
+              .row
+                .small-12.columns
+                  h1.text-center My wishes
+
+                  #my-wish-list
+
+                  a#add-video Add video
+
 
     #wish.transparent data-role="page"
       div data-role="content"
@@ -174,10 +194,9 @@ html lang='en-US'
             .region.region-main-content
               .row
                 .small-12.columns
-                  h1.text-center data-content='title'
+                  h1.text-center Fund a wish
 
-                  h2 Description
-                  .wish-description data-content='description'
+                  #wish-list
 
 
   //////////////////////////////////////////////////
@@ -189,10 +208,39 @@ html lang='en-US'
 
     ///////////////////// Top menu
     script type='text/html' id='top-menu'
+      .row.top-menu-content
+        .small-12.columns
+          ul.no-bullet
+            li
+              a href='#post-wish' Create a wish
+            li
+              a href='#wishes' Fund a wish
+            li
+              a href='#my-wishes' My wishes
+            li
+              a href='#settings' Settings
       .row
         .small-4.columns
           p
-            a href='#settings' menu
+            a.top-menu-toggle href='#' menu
+
+    ///////////////////// Show wish
+    script type='text/html' id='wish-page'
+      .row
+        .small-12.columns
+          h1.text-center data-content='title'
+
+          h2 Description
+          .wish-description data-content='description'
+
+          h2 Goal
+          .wish-cost data-content='cost'
+
+          h2 Donations
+          .wish-donated data-content='donated'
+
+          h2 Wish by
+          .wish-user-name data-content='user.name'
 
   // PhoneGap Build files necessary for the app.
   // These are not required or present in the web app.

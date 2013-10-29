@@ -14,7 +14,7 @@ Wishable.api = Wishable.api || {
    */
   wishes: function wishes(callback) {
     Wishable.api.get('wishes', null, null, function(data) {
-      callback(data.wishes);
+      callback(data ? data.wishes : null);
     });
   },
 
@@ -29,7 +29,7 @@ Wishable.api = Wishable.api || {
    */
   wish: function wish(wish_id, callback) {
     Wishable.api.get('wishes/' + wish_id, null, null, function(data) {
-      callback(data.wish);
+      callback(data ? data.wish : null);
     });
   },
 
@@ -42,7 +42,7 @@ Wishable.api = Wishable.api || {
    */
   create_wish: function create_wish(wish_data, callback) {
     Wishable.api.post('wishes', {wish: wish_data}, null, function(data) {
-      callback(data.wish);
+      callback(data ? data.wish : null);
     });
   },
 
@@ -55,7 +55,7 @@ Wishable.api = Wishable.api || {
    */
   donate: function donate(donation_data, callback) {
     Wishable.api.post('donations', {donation: donation_data}, null, function(data) {
-      callback(data.donation);
+      callback(data ? data.donation : null);
     });
   },
 
@@ -73,7 +73,7 @@ Wishable.api = Wishable.api || {
         Wishable.api.user_token = data.user.authentication_token;
       }
 
-      callback(data.user);
+      callback(data ? data.user : null);
     });
   },
 
@@ -91,7 +91,7 @@ Wishable.api = Wishable.api || {
         Wishable.api.user_token = data.user.authentication_token;
       }
 
-      callback(data.user);
+      callback(data ? data.user : null);
     });
   },
 
@@ -262,7 +262,8 @@ Wishable.api = Wishable.api || {
           response.message = "Unknown error while phoning home.";
         }
 
-        Wishable.api.last_error = "Error while trying to make a " + method + " request to " + uri + ": " + response.message;
+        console.log("Error while trying to make a " + method + " request to " + uri + ": " + response.message);
+        Wishable.api.last_error = response.message;
 
         callback(null);
       })
