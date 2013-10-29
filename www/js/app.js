@@ -36,6 +36,17 @@ var Wishable = Wishable || {
       }
     });
 
+    $('#donate-form').validate({
+      submitHandler: function(form) {
+        var params = $(form).formParams();
+        Wishable.api.donate(params, function(data) {
+          if (data) {
+            alert('your donation will be processed');
+          }
+        });
+      }
+    });
+
     Wishable.initialized = true;
   },
 

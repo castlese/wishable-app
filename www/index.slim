@@ -139,6 +139,9 @@ html lang='en-US'
         .wrapper
           .page-content
             .region.region-main-content
+                  #wish-list
+
+    #donate.transparent data-role="page"                
             .row
               .small-12.columns
                 h1 Fund a wish
@@ -146,11 +149,11 @@ html lang='en-US'
                 h2 Goal: &pound;
                 //Insert wish-cost here.
                 h2 Raised so far: &pound;
-                //Insert total raised
+                //Insert total donated so far
                 //Maybe substiture a progress bar later?
             .row
               .small-12.columns
-                form#donate
+                form#donate-form
                   .row.field
                     .small-12.columns
                       label for='donation-amount' Your donation
@@ -161,7 +164,7 @@ html lang='en-US'
                       .btn
                         input#donation-submit type='submit' value='Donate'
 
-                  #wish-list
+
 
     #wish.transparent data-role="page"
       div data-role="content"
