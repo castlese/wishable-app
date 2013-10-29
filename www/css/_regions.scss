@@ -30,12 +30,17 @@ body {
   .wrapper {
     max-width: 980px;
     margin: 0 auto;
-    background-color: $primary-light;
     height: 100%;
-    padding-top: 2em;
+    padding-top: 1.75em;
+    overflow: hidden;
 
     .page-content {
+      overflow: auto;
+      height: 100%;
+      background-color: $primary-light;
+
       .region-main-content {
+        background-color: $primary-light;
       }
     }
   }

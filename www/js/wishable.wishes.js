@@ -12,7 +12,9 @@ Wishable.wishes = Wishable.wishes || {
   },
 
   show_summary: function($el, wish) {
-    wish.percent_of_goal = wish.donated ? wish.donated + " (" + (wish.cost / wish.donated * 100) + '%)' : '0%';
+    wish.percent_of_goal = Wishable.wishes.percent_fulfilled(wish);
+
+    wish['user_name'] = (wish.user.email || wish.user.name) + " wishes for";
 
     var $wrapper = $('<div class="wish-summary-wrapper" />');
     Wishable.load_template($wrapper, '#wish-summary', wish);
@@ -20,6 +22,10 @@ Wishable.wishes = Wishable.wishes || {
     $wrapper.find('.action').click(function(e) {
       Wishable.change_page('#donate', {wish_id: wish.id});
     });
+
+    if (wish.user.url) {
+      $wrapper.find('.wish-user-image').append('<img src="' + wish.user.url + '" />');
+    }
 
     $el.append($wrapper);
   },
@@ -35,6 +41,10 @@ Wishable.wishes = Wishable.wishes || {
     //     }
     //   });
     // });
+  },
+
+  percent_fulfilled: function percent_fulfilled(wish) {
+    return wish.donated ? wish.donated + " (" + (wish.cost / wish.donated * 100) + '%)' : '0%';
   },
 
   show: function show(wish_id) {
