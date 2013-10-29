@@ -168,10 +168,23 @@
                   <h1 class="text-center">
                     Create your wish
                   </h1>
+                  <p>
+                    Tell people about your wish, what would you like to do? Why does it mean so much to you?
+                  </p>
                   <form id="create-wish-form">
                     <div class="row field">
                       <div class="small-12 columns">
                         <label for="create-wish-title">Title</label><input id="create-wish-title" name="title" required="required" type="text" />
+                      </div>
+                    </div>
+                    <div class="row field">
+                      <div class="small-12 columns">
+                        <label for="wish-cost">How much will it cost?</label><input id="wish-cost" name="cost" type="text" />
+                      </div>
+                    </div>
+                    <div class="row field">
+                      <div class="small-12 columns">
+                        <label for="wish-text">Tell us about your wish</label><textarea cols="40" id="wish-text" name="text" rows="5"></textarea>
                       </div>
                     </div>
                     <div class="row submit">
@@ -198,16 +211,50 @@
         <div class="wrapper">
           <div class="page-content">
             <div class="region region-main-content">
+              <div id="wish-list"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="transparent" data-role="page" id="donate">
+      <div data-role="content">
+        <div class="top-menu"></div>
+        <div class="wrapper">
+          <div class="page-content">
+            <div class="region region-main-content">
               <div class="row">
                 <div class="small-12 columns">
-                  <h1 class="text-center">
+                  <h1>
                     Fund a wish
                   </h1>
+                  <p>
+                    Please use the form below to make a donation.
+                  </p>
+                  <h2>
+                    Goal: &pound;
+                  </h2>
+                  <h2>
+                    Raised so far: &pound;
+                  </h2>
                 </div>
               </div>
               <div class="row">
                 <div class="small-12 columns">
-                  <div id="wish-list"></div>
+                  <form id="donate-form">
+                    <div class="row field">
+                      <div class="small-12 columns">
+                        <label for="donation-amount">Your donation</label><input id="donation-amount" name="amount" type="text" />
+                      </div>
+                    </div>
+                    <div class="row field">
+                      <div class="small-12 columns">
+                        <div class="btn">
+                          <input id="donation-submit" type="submit" value="Donate" />
+                        </div>
+                      </div>
+                    </div>
+                  </form>
                 </div>
               </div>
             </div>
@@ -240,7 +287,17 @@
         <div class="top-menu"></div>
         <div class="wrapper">
           <div class="page-content">
-            <div class="region region-main-content"></div>
+            <div class="region region-main-content">
+              <div class="row">
+                <div class="small-12 columns">
+                  <h1 class="text-center">
+                    Fund a wish
+                  </h1>
+                  <a id="donate"></a>
+                  <div id="wish-list"></div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

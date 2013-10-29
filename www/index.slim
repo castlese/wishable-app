@@ -116,13 +116,21 @@ html lang='en-US'
               .row
                 .small-12.columns
                   h1.text-center Create your wish
+                  p Tell people about your wish, what would you like to do? Why does it mean so much to you?
 
                   form#create-wish-form
                     .row.field
                       .small-12.columns
                         label for='create-wish-title' Title
                         input#create-wish-title name='title' type='text' required=true
-
+                    .row.field
+                      .small-12.columns
+                        label for='wish-cost' How much will it cost?
+                        input#wish-cost name='cost' type='text'
+                    .row.field
+                      .small-12.columns
+                        label for='wish-text' Tell us about your wish
+                        textarea#wish-text name='text' rows='5' cols='40'
                     .row.submit
                       .small-12.columns
                         input type='submit' value='create your wish'
@@ -136,13 +144,36 @@ html lang='en-US'
         .wrapper
           .page-content
             .region.region-main-content
-              .row
-                .small-12.columns
-                  h1.text-center Fund a wish
 
+              #wish-list
+
+    #donate.transparent data-role="page"
+      div data-role="content"
+        .top-menu
+        .wrapper
+          .page-content
+            .region.region-main-content
               .row
                 .small-12.columns
-                  #wish-list
+                  h1 Fund a wish
+                  p Please use the form below to make a donation.
+                  h2 Goal: &pound;
+                  //Insert wish-cost here.
+                  h2 Raised so far: &pound;
+                  //Insert total donated so far
+                  //Maybe substiture a progress bar later?
+              .row
+                .small-12.columns
+                  form#donate-form
+                    .row.field
+                      .small-12.columns
+                        label for='donation-amount' Your donation
+                        input#donation-amount name='amount' type='text'
+                        // Maybe substitute a slider control here?
+                    .row.field
+                      .small-12.columns
+                        .btn
+                          input#donation-submit type='submit' value='Donate'
 
     #my-wishes.transparent data-role="page"
       div data-role="content"
@@ -165,6 +196,13 @@ html lang='en-US'
         .wrapper
           .page-content
             .region.region-main-content
+              .row
+                .small-12.columns
+                  h1.text-center Fund a wish
+
+                  a#donate
+
+                  #wish-list
 
 
   //////////////////////////////////////////////////
