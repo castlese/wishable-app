@@ -5,16 +5,12 @@ var Wishable = Wishable || {
 
   init:   function init($, $context) {
 
-  // 	$( "#login-password" ).rules( "add", {
-  // 		required: true,
-  // 		minlength: 8,
-  // 		messages: {
-  // 		  required: "Please enter a password",
-  // 		  minlength: jQuery.format("Please set a password with at least 8 characters")
-  // 		}
-		// });
-
     $('#create-wish-form').validate({
+      rules: {
+        cost: {
+          digits: true
+        }
+      },
       submitHandler: function(form) {
         var params = $(form).formParams();
         Wishable.api.create_wish(params, function(data) {
@@ -30,7 +26,7 @@ var Wishable = Wishable || {
 
     $('#create-account-form').validate({
     	rules: {
-  		password:{
+  		  password:{
   		 		minlength: 8
   			}
     	},
@@ -62,6 +58,11 @@ var Wishable = Wishable || {
     });
 
     $('#donate-form').validate({
+      rules: {
+        amount: {
+          digits: true
+        }
+      },
       submitHandler: function(form) {
         var params = $(form).formParams();
         Wishable.api.donate(params, function(data) {
