@@ -33,17 +33,91 @@ html lang='en-US'
         .wrapper
           .page-content
             .region.region-main-content
-              h1 Wishable
+              .row
+                .small-12.columns
+                  h1 Wishable
+              .row
+                .small-12.columns
+                  p Short text explaining what this does.
+                  ul
+                    li
+                      a href='#login' Sign in or make an account
+                    li
+                      a.facebook href='#' Sign in
+                    li
+                      a href='#post-wish' Create a wish
+                    li
+                      a href='#wishes' Fund wishes
+
+    #login.transparent data-role="page"
+      div data-role="content"
+        .wrapper
+          .page-content
+            .region.region-main-content
+              .row
+                .small-12.columns
+                  h1 Login
+              .row
+                .small-12.columns
+                  form#login
+                    .row.field
+                      .small-12.columns
+                        label for='login-username' User name or email
+                        input#login-username name='login' type='text'
+                    .row.field
+                      .small-12.columns
+                        label for='login-password' Password
+                        input#login-password name='password' type='password'
+                    .row.submit
+                      .small-12.columns
+                        .btn
+                          input#login-submit type='submit' value='Log in'
+                        a.alt href='#create-account' Create an account
+                        a.cancel href='#' data-rel='back' Cancel
+
+    #create-account.transparent data-role="page"
+      div data-role="content"
+        .wrapper
+          .page-content
+            .region.region-main-content
+              .row
+                .small-12.columns
+                  h1 Create an account
+              .row
+                .small-12.columns
+                  form#login
+                    .row.field
+                      .small-12.columns
+                        label for='login-username' User name or email
+                        input#login-username name='login' type='text'
+                    .row.field
+                      .small-12.columns
+                        label for='login-password' Password
+                        input#login-password name='password' type='password'
+                    .row.submit
+                      .small-12.columns
+                        .btn
+                          input#login-submit type='submit' value='Create my account'
+                        a.alt href='#login' I have an account
+                        a.alt.facebook href='#' Sign in with Facebook
+                        a.cancel href='#' data-rel='back' Cancel
+
+    #post-wish.transparent data-role="page"
+      div data-role="content"
+        .wrapper
+          .page-content
+            .region.region-main-content
+              h1 Create your wish
               p Short text explaining what this does.
-              ul
-                li
-                  a href='#' Make an account
-                li
-                  a.facebook href='#' Sign in
-                li
-                  a href='#post-wish' Create a wish
-                li
-                  a href='#wishes' Fund wishes
+
+    #wishes.transparent data-role="page"
+      div data-role="content"
+        .wrapper
+          .page-content
+            .region.region-main-content
+              h1 Fund a wish
+              p Short text explaining what this does.
+
 
 
   // PhoneGap Build files necessary for the app.
