@@ -104,8 +104,26 @@ html lang='en-US'
         .wrapper
           .page-content
             .region.region-main-content
-              h1 Create your wish
-              p Short text explaining what this does.
+              .row
+                .small-12.columns
+                  h1 Create your wish
+                  p Tell people about your wish, what would you like to do? Why does it mean so much to you?..
+              .row
+                .small-12.columns
+                  form#wish
+                    .row.field
+                      .small-12.columns
+                        label for='wish-title' Title of your wish
+                        input#wish-title name='title' type='text'
+                    .row.field
+                      .small-12.columns
+                        label for='wish-cost' How much will it cost?
+                        input#wish-cost name='cost' type='text'
+                    .row.field
+                      .small-12.columns
+                        label for='wish-text' How much will it cost?
+                        textarea#wish-text name='text' rows='5' cols='40'
+                       
 
     #wishes.transparent data-role="page"
       div data-role="content"
