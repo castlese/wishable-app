@@ -1,18 +1,99 @@
+/* global Wishable */
+"use strict";
+
 Wishable.api = Wishable.api || {
   user_token:   "",
   last_error:   null,
 
   /**
+   *
    * Get a list of the latest wishes
    *
    * @method wishes
    * @param  {Function} callback Callback to receive the data
    */
-  wishes: function(callback) {
+  wishes: function wishes(callback) {
     Wishable.api.get('wishes', null, null, function(data) {
       callback(data);
     });
   },
+
+
+  /**
+   *
+   * Get a single wish
+   *
+   * @method wish
+   * @param  {Integer}  wish_id  The id of the wish to retrieve
+   * @param  {Function} callback Callback to receive the data
+   */
+  wish: function wish(wish_id, callback) {
+    Wishable.api.get('wishes/' + wish_id, null, null, function(data) {
+      callback(data);
+    });
+  },
+
+  /**
+   * Create a wish on the API.
+   *
+   * @method create_wish
+   * @param  {Object}   wish_data Data to post
+   * @param  {Function} callback  Callback to receive returned data.
+   */
+  create_wish: function create_wish(wish_data, callback) {
+    Wishable.api.post('wishes', wish_data, null, function(data) {
+      callback(data);
+    });
+  },
+
+  /**
+   * Create a donation on the API.
+   *
+   * @method donate
+   * @param  {Object}   donation_data Data to post
+   * @param  {Function} callback  Callback to receive returned data.
+   */
+  donate: function donate(donation_data, callback) {
+    Wishable.api.post('donations', donation_data, null, function(data) {
+      callback(data);
+    });
+  },
+
+  /**
+   *
+   * Register a new user
+   *
+   * @method  register_user
+   * @param  {Object}   user_data Must contain email and password
+   * @param  {Function} callback  Callback to receive returned data.
+   */
+  register_user: function register_user(user_data, callback) {
+    Wishable.api.post('users/register', user_data, null, function(data) {
+      if (data) {
+        Wishable.api.user_token = data.authentication_token;
+      }
+
+      callback(data);
+    });
+  },
+
+  /**
+   *
+   * Login a user
+   *
+   * @method  login
+   * @param  {Object}   login_data Must contain email and password
+   * @param  {Function} callback  Callback to receive returned data.
+   */
+  login: function login(login_data, callback) {
+    Wishable.api.post('users/login', login_data, null, function(data) {
+      if (data) {
+        Wishable.api.user_token = data.authentication_token;
+      }
+
+      callback(data);
+    });
+  }
 
   /**
    *

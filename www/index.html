@@ -61,6 +61,7 @@
     </div>
     <div class="transparent" data-role="page" id="login">
       <div data-role="content">
+        <div class="top-menu"></div>
         <div class="wrapper">
           <div class="page-content">
             <div class="region region-main-content">
@@ -102,6 +103,7 @@
     </div>
     <div class="transparent" data-role="page" id="create-account">
       <div data-role="content">
+        <div class="top-menu"></div>
         <div class="wrapper">
           <div class="page-content">
             <div class="region region-main-content">
@@ -143,6 +145,7 @@
     </div>
     <div class="transparent" data-role="page" id="post-wish">
       <div data-role="content">
+        <div class="top-menu"></div>
         <div class="wrapper">
           <div class="page-content">
             <div class="region region-main-content">
@@ -159,6 +162,7 @@
     </div>
     <div class="transparent" data-role="page" id="wishes">
       <div data-role="content">
+        <div class="top-menu"></div>
         <div class="wrapper">
           <div class="page-content">
             <div class="region region-main-content">
@@ -175,6 +179,26 @@
       </div>
     </div>
   </body>
+  <div id="templates">
+    <script id="header-menu" type="text/html">
+      <div class="row">
+        <div class="small-12 columns">
+          <div class="field">
+            <div class="image-preview"></div>
+            <div class="help">
+              <p>
+                Drop a file here or click 'Browse' to upload your image.
+              </p>
+            </div>
+            <div class="image-field"></div>
+            <div class="image-progress">
+              <div class="image-progress-indicator"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </script>
+  </div>
   <script src="cordova.js"></script>
   <script src="PushNotification.js"></script>
   <script src="GAPlugin.js"></script>
