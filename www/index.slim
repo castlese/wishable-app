@@ -144,31 +144,36 @@ html lang='en-US'
         .wrapper
           .page-content
             .region.region-main-content
-<<<<<<< HEAD
-                  #wish-list
+
+              #wish-list
 
     #donate.transparent data-role="page"                
-            .row
-              .small-12.columns
-                h1 Fund a wish
-                p Please use the form below to make a donation.
-                h2 Goal: &pound;
-                //Insert wish-cost here.
-                h2 Raised so far: &pound;
-                //Insert total donated so far
-                //Maybe substiture a progress bar later?
-            .row
-              .small-12.columns
-                form#donate-form
-                  .row.field
-                    .small-12.columns
-                      label for='donation-amount' Your donation
-                      input#donation-amount name='amount' type='text' 
-                      // Maybe substitute a slider control here?
-                  .row.field
-                    .small-12.columns
-                      .btn
-                        input#donation-submit type='submit' value='Donate'
+      div data-role="content"
+        .top-menu
+        .wrapper
+          .page-content
+            .region.region-main-content
+              .row
+                .small-12.columns
+                  h1 Fund a wish
+                  p Please use the form below to make a donation.
+                  h2 Goal: &pound;
+                  //Insert wish-cost here.
+                  h2 Raised so far: &pound;
+                  //Insert total donated so far
+                  //Maybe substiture a progress bar later?
+              .row
+                .small-12.columns
+                  form#donate-form
+                    .row.field
+                      .small-12.columns
+                        label for='donation-amount' Your donation
+                        input#donation-amount name='amount' type='text' 
+                        // Maybe substitute a slider control here?
+                    .row.field
+                      .small-12.columns
+                        .btn
+                          input#donation-submit type='submit' value='Donate'
 
 
     #my-wishes.transparent data-role="page"
@@ -195,6 +200,8 @@ html lang='en-US'
               .row
                 .small-12.columns
                   h1.text-center Fund a wish
+
+                  a#donate
 
                   #wish-list
 
