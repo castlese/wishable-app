@@ -153,27 +153,6 @@ html lang='en-US'
         .wrapper
           .page-content
             .region.region-main-content
-              .row
-                .small-12.columns
-                  h1 Fund a wish
-                  p Please use the form below to make a donation.
-                  h2 Goal: &pound;
-                  //Insert wish-cost here.
-                  h2 Raised so far: &pound;
-                  //Insert total donated so far
-                  //Maybe substiture a progress bar later?
-              .row
-                .small-12.columns
-                  form#donate-form
-                    .row.field
-                      .small-12.columns
-                        label for='donation-amount' Your donation
-                        input#donation-amount name='amount' type='text'
-                        // Maybe substitute a slider control here?
-                    .row.field
-                      .small-12.columns
-                        .btn
-                          input#donation-submit type='submit' value='Donate'
 
     #my-wishes.transparent data-role="page"
       div data-role="content"
@@ -184,11 +163,7 @@ html lang='en-US'
               .row
                 .small-12.columns
                   h1.text-center My wishes
-
                   #my-wish-list
-
-                  a#add-video Add video
-
 
     #wish.transparent data-role="page"
       div data-role="content"
@@ -196,14 +171,6 @@ html lang='en-US'
         .wrapper
           .page-content
             .region.region-main-content
-              .row
-                .small-12.columns
-                  h1.text-center Fund a wish
-
-                  a#donate
-
-                  #wish-list
-
 
   //////////////////////////////////////////////////
   //
@@ -270,6 +237,35 @@ html lang='en-US'
               .small-12.columns.nudge.down.text-right
                 a.action href='#' Donate
 
+    ///////////////////// Show wish summary
+    script type='text/html' id='create-donation'
+      .row
+        .small-12.large-6.large-offset-3.columns.end
+          .row
+            .small-12.columns
+              h1 data-content='page_title'
+
+          .row
+            .small-12.columns
+              form#donate-form
+                .row.field
+                  .small-12.columns
+                    label for='donation-amount' Your donation
+                    input#donation-amount name='amount' type='text'
+                    // Maybe substitute a slider control here?
+                .row.field
+                  .small-12.columns
+                    .btn
+                      input#donation-submit type='submit' value='Donate'
+                .row
+                  .small-12.columns.text-right
+                    a.cancel data-rel='back' Cancel
+          .row
+            .small-12.columns
+              div data-role='collapsible'
+                h2 Wish details
+                .wish-details
+
 
   // PhoneGap Build files necessary for the app.
   // These are not required or present in the web app.
@@ -300,3 +296,4 @@ html lang='en-US'
 
   script src="js/api.js"
   script src="js/wishable.wishes.js"
+  script src="js/wishable.donations.js"

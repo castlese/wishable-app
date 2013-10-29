@@ -4656,13 +4656,13 @@ body .wrapper {
   height: 100%;
   padding-top: 2em; }
 
-#wish-list .wish-summary {
+.wish-summary-wrapper .wish-summary {
   border: 1px solid #ffbd80;
   padding: 1em; }
-  #wish-list .wish-summary .wish-title {
+  .wish-summary-wrapper .wish-summary .wish-title {
     font-family: "oxygenbold";
     font-size: 1.25em; }
-  #wish-list .wish-summary .label {
+  .wish-summary-wrapper .wish-summary .label {
     background-color: transparent;
     font-family: "oxygenbold";
     color: #ff7a00; }

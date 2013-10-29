@@ -222,42 +222,7 @@
         <div class="top-menu"></div>
         <div class="wrapper">
           <div class="page-content">
-            <div class="region region-main-content">
-              <div class="row">
-                <div class="small-12 columns">
-                  <h1>
-                    Fund a wish
-                  </h1>
-                  <p>
-                    Please use the form below to make a donation.
-                  </p>
-                  <h2>
-                    Goal: &pound;
-                  </h2>
-                  <h2>
-                    Raised so far: &pound;
-                  </h2>
-                </div>
-              </div>
-              <div class="row">
-                <div class="small-12 columns">
-                  <form id="donate-form">
-                    <div class="row field">
-                      <div class="small-12 columns">
-                        <label for="donation-amount">Your donation</label><input id="donation-amount" name="amount" type="text" />
-                      </div>
-                    </div>
-                    <div class="row field">
-                      <div class="small-12 columns">
-                        <div class="btn">
-                          <input id="donation-submit" type="submit" value="Donate" />
-                        </div>
-                      </div>
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </div>
+            <div class="region region-main-content"></div>
           </div>
         </div>
       </div>
@@ -274,7 +239,6 @@
                     My wishes
                   </h1>
                   <div id="my-wish-list"></div>
-                  <a id="add-video">Add video</a>
                 </div>
               </div>
             </div>
@@ -287,17 +251,7 @@
         <div class="top-menu"></div>
         <div class="wrapper">
           <div class="page-content">
-            <div class="region region-main-content">
-              <div class="row">
-                <div class="small-12 columns">
-                  <h1 class="text-center">
-                    Fund a wish
-                  </h1>
-                  <a id="donate"></a>
-                  <div id="wish-list"></div>
-                </div>
-              </div>
-            </div>
+            <div class="region region-main-content"></div>
           </div>
         </div>
       </div>
@@ -385,6 +339,50 @@
         </div>
       </div>
     </script>
+    <script id="create-donation" type="text/html">
+      <div class="row">
+        <div class="small-12 large-6 large-offset-3 columns end">
+          <div class="row">
+            <div class="small-12 columns">
+              <h1 data-content="page_title"></h1>
+            </div>
+          </div>
+          <div class="row">
+            <div class="small-12 columns">
+              <form id="donate-form">
+                <div class="row field">
+                  <div class="small-12 columns">
+                    <label for="donation-amount">Your donation</label><input id="donation-amount" name="amount" type="text" />
+                  </div>
+                </div>
+                <div class="row field">
+                  <div class="small-12 columns">
+                    <div class="btn">
+                      <input id="donation-submit" type="submit" value="Donate" />
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="small-12 columns text-right">
+                    <a class="cancel" data-rel="back">Cancel</a>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="row">
+            <div class="small-12 columns">
+              <div data-role="collapsible">
+                <h2>
+                  Wish details
+                </h2>
+                <div class="wish-details"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </script>
   </div>
   <script src="cordova.js"></script>
   <script src="PushNotification.js"></script>
@@ -407,4 +405,5 @@
   <script src="js/app.js"></script>
   <script src="js/api.js"></script>
   <script src="js/wishable.wishes.js"></script>
+  <script src="js/wishable.donations.js"></script>
 </html>

@@ -191,6 +191,10 @@ var Wishable = Wishable || {
       if ($page.attr('id') == 'my-wishes') {
         Wishable.wishes.my_wishes();
       }
+
+      if ($page.attr('id') == 'donate') {
+        Wishable.donations.donate(Wishable.pickup_param('wish_id'));
+      }
     }
   });
 
