@@ -83,19 +83,27 @@ html lang='en-US'
                   h1 Create an account
               .row
                 .small-12.columns
-                  form#login
+                  form#create_user
                     .row.field
                       .small-12.columns
-                        label for='login-username' User name or email
-                        input#login-username name='login' type='text'
+                        label for='user-username' User name or email
+                        input#user-username name='login' type='text'
                     .row.field
                       .small-12.columns
-                        label for='login-password' Password
-                        input#login-password name='password' type='password'
+                        label for='user-email' Email
+                        input#user-email name='email' type='text'
+                    .row.field
+                      .small-12.columns
+                        label for='user-password' Password
+                        input#user-password name='password' type='password'
+                    .row.field
+                      .small-12.columns
+                        label for='user-password' Password again
+                        input#user-password name='password' type='password'
                     .row.submit
                       .small-12.columns
                         .btn
-                          input#login-submit type='submit' value='Create my account'
+                          input#user-submit type='submit' value='Create my account'
                         a.alt href='#login' I have an account
                         a.cancel href='#' data-rel='back' Cancel
 
@@ -107,7 +115,7 @@ html lang='en-US'
               .row
                 .small-12.columns
                   h1 Create your wish
-                  p Tell people about your wish, what would you like to do? Why does it mean so much to you?..
+                  p Tell people about your wish, what would you like to do? Why does it mean so much to you?
               .row
                 .small-12.columns
                   form#wish
@@ -121,17 +129,42 @@ html lang='en-US'
                         input#wish-cost name='cost' type='text'
                     .row.field
                       .small-12.columns
-                        label for='wish-text' How much will it cost?
+                        label for='wish-text' Tell us about your wish
                         textarea#wish-text name='text' rows='5' cols='40'
-                       
+                    .row.field
+                      .small-12.columns
+                        .btn
+                          input#wish-submit type='submit' value='Make a wish!'
+                           
 
     #wishes.transparent data-role="page"
       div data-role="content"
         .wrapper
           .page-content
             .region.region-main-content
-              h1 Fund a wish
-              p Short text explaining what this does.
+            .row
+              .small-12.columns
+                h1 Fund a wish
+                p Please use the form below to make a donation.
+                h2 Goal: &pound;
+                //Insert wish-cost here.
+                h2 Raised so far: &pound;
+                //Insert total raised
+                //Maybe substiture a progress bar later?
+            .row
+              .small-12.columns
+                form#donate
+                  .row.field
+                    .small-12.columns
+                      label for='donation-amount' Your donation
+                      input#donation-amount name='amount' type='text' 
+                      // Maybe substitute a slider control here?
+                  .row.field
+                    .small-12.columns
+                      .btn
+                        input#donation-submit type='submit' value='Donate'
+
+
 
 
 
