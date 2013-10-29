@@ -1,7 +1,16 @@
-
 form {
-
   .cancel {
     color: $tertiary-dark ! important;
+  }
+}
+
+.action {
+  color: $primary-highlight ! important;
+  @include bold;
+  @include larger;
+
+  &:hover {
+    color: $secondary-highlight ! important;
+    @include our-transition;
   }
 }

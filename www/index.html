@@ -203,6 +203,10 @@
                   <h1 class="text-center">
                     Fund a wish
                   </h1>
+                </div>
+              </div>
+              <div class="row">
+                <div class="small-12 columns">
                   <div id="wish-list"></div>
                 </div>
               </div>
@@ -289,7 +293,38 @@
           <h2>
             Wish by
           </h2>
+          <div class="wish-user-image"></div>
           <div class="wish-user-name" data-content="user.name"></div>
+        </div>
+      </div>
+    </script>
+    <script id="wish-summary" type="text/html">
+      <div class="row">
+        <div class="small-12 large-6 large-offset-3 columns end">
+          <div class="wish-summary">
+            <div class="row">
+              <div class="small-12 columns">
+                <h1 class="wish-title" data-content="title"></h1>
+              </div>
+            </div>
+            <div class="row">
+              <div class="small-6 columns">
+                <div class="wish-summary-cost">
+                  <span class="label">Goal</span><span class="value" data-content="cost"></span>
+                </div>
+              </div>
+              <div class="small-6 columns">
+                <div class="wish-summary-donated">
+                  <span class="label">Donations</span><span class="value" data-content="percent_of_goal"></span>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="small-12 columns nudge down text-right">
+                <a class="action" href="#">Donate</a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </script>

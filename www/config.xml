@@ -50,5 +50,5 @@
     <gap:splash gap:platform="winphone" src="res/screen/windows-phone/screen-portrait.jpg" />
     <access origin="*" />
 
-    <gap:plugin name="org.apache.cordova.media-capture" />
+    <!--<gap:plugin name="org.apache.cordova.media-capture" />-->
 </widget>
