@@ -6,13 +6,22 @@ Wishable.wishes = Wishable.wishes || {
     Wishable.api.wishes(function(wishes) {
       var i;
       for (i = 0; i < wishes.length; i++) {
-        var wish = wishes[i];
-
-        wish.percent_of_goal = wish.donated ? wish.donated + " (" + (wish.cost / wish.donated * 100) + '%)' : '0%';
-
-        Wishable.load_template($('#wish-list'), '#wish-summary', wish);
+        Wishable.wishes.show_summary($('#wish-list'), wishes[i]);
       }
     });
+  },
+
+  show_summary: function($el, wish) {
+    wish.percent_of_goal = wish.donated ? wish.donated + " (" + (wish.cost / wish.donated * 100) + '%)' : '0%';
+
+    var $wrapper = $('<div class="wish-summary-wrapper" />');
+    Wishable.load_template($wrapper, '#wish-summary', wish);
+
+    $wrapper.find('.action').click(function(e) {
+      Wishable.change_page('#donate', {wish_id: wish.id});
+    });
+
+    $el.append($wrapper);
   },
 
   my_wishes: function my_wishes() {
@@ -46,6 +55,10 @@ Wishable.wishes = Wishable.wishes || {
       if (data.user.url) {
         $wish_div.find('.wish-user-image').append('<img src="' + data.user.url + '" />');
       }
+
+      $wish_div.find('.action').click(function(e) {
+        Wishable.change_page('#donate', {wish_id: wish_id});
+      });
     });
   }
 };
