@@ -49,6 +49,7 @@ html lang='en-US'
 
     #login.transparent data-role="page"
       div data-role="content"
+        .top-menu
         .wrapper
           .page-content
             .region.region-main-content
@@ -75,6 +76,7 @@ html lang='en-US'
 
     #create-account.transparent data-role="page"
       div data-role="content"
+        .top-menu
         .wrapper
           .page-content
             .region.region-main-content
@@ -109,6 +111,7 @@ html lang='en-US'
 
     #post-wish.transparent data-role="page"
       div data-role="content"
+        .top-menu
         .wrapper
           .page-content
             .region.region-main-content
@@ -139,6 +142,7 @@ html lang='en-US'
 
     #wishes.transparent data-role="page"
       div data-role="content"
+        .top-menu
         .wrapper
           .page-content
             .region.region-main-content
@@ -165,6 +169,27 @@ html lang='en-US'
                         input#donation-submit type='submit' value='Donate'
 
 
+
+              #wish-list
+
+  //////////////////////////////////////////////////
+  //
+  // Templates
+  //
+  // Everything below this line is hidden and used only as templates for JS
+  #templates
+
+    ///////////////////// Top menu
+    script type='text/html' id='header-menu'
+      .row
+        .small-12.columns
+          .field
+            .image-preview
+            .help
+              p Drop a file here or click 'Browse' to upload your image.
+            .image-field
+            .image-progress
+              .image-progress-indicator
 
 
 
@@ -194,3 +219,6 @@ html lang='en-US'
 
   // include the main temptster file first
   script src="js/app.js"
+
+  script src="js/api.js"
+  script src="js/wishable.wishes.js"
