@@ -58,7 +58,7 @@ html lang='en-US'
                   h1.text-center Login
               .row
                 .small-12.columns
-                  form#login
+                  form#login-form
                     .row.field
                       .small-12.columns
                         label for='login-username' User name or email
@@ -71,7 +71,10 @@ html lang='en-US'
                       .small-12.columns
                         .btn
                           input#login-submit type='submit' value='Log in'
+                    .row
+                      .small-6.columns
                         a.alt href='#create-account' Create an account
+                      .small-6.columns.text-right
                         a.cancel href='#' data-rel='back' Cancel
 
     #create-account.transparent data-role="page"
@@ -98,7 +101,10 @@ html lang='en-US'
                       .small-12.columns
                         .btn
                           input#login-submit type='submit' value='Create my account'
+                    .row
+                      .small-6.columns
                         a.alt href='#login' I have an account
+                      .small-6.columns.text-right
                         a.cancel href='#' data-rel='back' Cancel
 
     #post-wish.transparent data-role="page"
@@ -110,16 +116,19 @@ html lang='en-US'
               .row
                 .small-12.columns
                   h1.text-center Create your wish
-                  p Short text explaining what this does.
 
                   form#create-wish-form
-                    .field
-                      label for='create-wish-title' Title
-                      input#create-wish-title name='title' type='text' required=true
+                    .row.field
+                      .small-12.columns
+                        label for='create-wish-title' Title
+                        input#create-wish-title name='title' type='text' required=true
 
-                    .submit
-                      input type='submit' value='create your wish'
-                      a.cancel data-rel='back' Cancel
+                    .row.submit
+                      .small-12.columns
+                        input type='submit' value='create your wish'
+                    .row
+                      .small-12.columns.text-right
+                        a.cancel data-rel='back' Cancel
 
     #wishes.transparent data-role="page"
       div data-role="content"
@@ -130,11 +139,10 @@ html lang='en-US'
               .row
                 .small-12.columns
                   h1.text-center Fund a wish
-                  p Short text explaining what this does.
 
                   #wish-list
 
-    #wish.transparent data-role="page"
+    #my-wishes.transparent data-role="page"
       div data-role="content"
         .top-menu
         .wrapper
@@ -142,10 +150,19 @@ html lang='en-US'
             .region.region-main-content
               .row
                 .small-12.columns
-                  h1.text-center data-content='title'
+                  h1.text-center My wishes
 
-                  h2 Description
-                  .wish-description data-content='description'
+                  #my-wish-list
+
+                  a#add-video Add video
+
+
+    #wish.transparent data-role="page"
+      div data-role="content"
+        .top-menu
+        .wrapper
+          .page-content
+            .region.region-main-content
 
 
   //////////////////////////////////////////////////
@@ -157,10 +174,39 @@ html lang='en-US'
 
     ///////////////////// Top menu
     script type='text/html' id='top-menu'
+      .row.top-menu-content
+        .small-12.columns
+          ul.no-bullet
+            li
+              a href='#post-wish' Create a wish
+            li
+              a href='#wishes' Fund a wish
+            li
+              a href='#my-wishes' My wishes
+            li
+              a href='#settings' Settings
       .row
         .small-4.columns
           p
-            a href='#settings' menu
+            a.top-menu-toggle href='#' menu
+
+    ///////////////////// Show wish
+    script type='text/html' id='wish-page'
+      .row
+        .small-12.columns
+          h1.text-center data-content='title'
+
+          h2 Description
+          .wish-description data-content='description'
+
+          h2 Goal
+          .wish-cost data-content='cost'
+
+          h2 Donations
+          .wish-donated data-content='donated'
+
+          h2 Wish by
+          .wish-user-name data-content='user.name'
 
   // PhoneGap Build files necessary for the app.
   // These are not required or present in the web app.

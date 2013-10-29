@@ -74,7 +74,7 @@
               </div>
               <div class="row">
                 <div class="small-12 columns">
-                  <form id="login">
+                  <form id="login-form">
                     <div class="row field">
                       <div class="small-12 columns">
                         <label for="login-username">User name or email</label><input id="login-username" name="login" required="required" type="text" />
@@ -90,7 +90,14 @@
                         <div class="btn">
                           <input id="login-submit" type="submit" value="Log in" />
                         </div>
-                        <a class="alt" href="#create-account">Create an account</a><a class="cancel" data-rel="back" href="#">Cancel</a>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="small-6 columns">
+                        <a class="alt" href="#create-account">Create an account</a>
+                      </div>
+                      <div class="small-6 columns text-right">
+                        <a class="cancel" data-rel="back" href="#">Cancel</a>
                       </div>
                     </div>
                   </form>
@@ -132,7 +139,14 @@
                         <div class="btn">
                           <input id="login-submit" type="submit" value="Create my account" />
                         </div>
-                        <a class="alt" href="#login">I have an account</a><a class="cancel" data-rel="back" href="#">Cancel</a>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="small-6 columns">
+                        <a class="alt" href="#login">I have an account</a>
+                      </div>
+                      <div class="small-6 columns text-right">
+                        <a class="cancel" data-rel="back" href="#">Cancel</a>
                       </div>
                     </div>
                   </form>
@@ -154,15 +168,21 @@
                   <h1 class="text-center">
                     Create your wish
                   </h1>
-                  <p>
-                    Short text explaining what this does.
-                  </p>
                   <form id="create-wish-form">
-                    <div class="field">
-                      <label for="create-wish-title">Title</label><input id="create-wish-title" name="title" required="required" type="text" />
+                    <div class="row field">
+                      <div class="small-12 columns">
+                        <label for="create-wish-title">Title</label><input id="create-wish-title" name="title" required="required" type="text" />
+                      </div>
                     </div>
-                    <div class="submit">
-                      <input type="submit" value="create your wish" /><a class="cancel" data-rel="back">Cancel</a>
+                    <div class="row submit">
+                      <div class="small-12 columns">
+                        <input type="submit" value="create your wish" />
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="small-12 columns text-right">
+                        <a class="cancel" data-rel="back">Cancel</a>
+                      </div>
                     </div>
                   </form>
                 </div>
@@ -183,10 +203,27 @@
                   <h1 class="text-center">
                     Fund a wish
                   </h1>
-                  <p>
-                    Short text explaining what this does.
-                  </p>
                   <div id="wish-list"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="transparent" data-role="page" id="my-wishes">
+      <div data-role="content">
+        <div class="top-menu"></div>
+        <div class="wrapper">
+          <div class="page-content">
+            <div class="region region-main-content">
+              <div class="row">
+                <div class="small-12 columns">
+                  <h1 class="text-center">
+                    My wishes
+                  </h1>
+                  <div id="my-wish-list"></div>
+                  <a id="add-video">Add video</a>
                 </div>
               </div>
             </div>
@@ -199,17 +236,7 @@
         <div class="top-menu"></div>
         <div class="wrapper">
           <div class="page-content">
-            <div class="region region-main-content">
-              <div class="row">
-                <div class="small-12 columns">
-                  <h1 class="text-center" data-content="title"></h1>
-                  <h2>
-                    Description
-                  </h2>
-                  <div class="wish-description" data-content="description"></div>
-                </div>
-              </div>
-            </div>
+            <div class="region region-main-content"></div>
           </div>
         </div>
       </div>
@@ -217,11 +244,52 @@
   </body>
   <div id="templates">
     <script id="top-menu" type="text/html">
+      <div class="row top-menu-content">
+        <div class="small-12 columns">
+          <ul class="no-bullet">
+            <li>
+              <a href="#post-wish">Create a wish</a>
+            </li>
+            <li>
+              <a href="#wishes">Fund a wish</a>
+            </li>
+            <li>
+              <a href="#my-wishes">My wishes</a>
+            </li>
+            <li>
+              <a href="#settings">Settings</a>
+            </li>
+          </ul>
+        </div>
+      </div>
       <div class="row">
         <div class="small-4 columns">
           <p>
-            <a href="#settings">menu</a>
+            <a class="top-menu-toggle" href="#">menu</a>
           </p>
+        </div>
+      </div>
+    </script>
+    <script id="wish-page" type="text/html">
+      <div class="row">
+        <div class="small-12 columns">
+          <h1 class="text-center" data-content="title"></h1>
+          <h2>
+            Description
+          </h2>
+          <div class="wish-description" data-content="description"></div>
+          <h2>
+            Goal
+          </h2>
+          <div class="wish-cost" data-content="cost"></div>
+          <h2>
+            Donations
+          </h2>
+          <div class="wish-donated" data-content="donated"></div>
+          <h2>
+            Wish by
+          </h2>
+          <div class="wish-user-name" data-content="user.name"></div>
         </div>
       </div>
     </script>

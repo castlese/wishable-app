@@ -9734,16 +9734,25 @@ ul {
   .with-space.on-right.lots {
     margin-right: 2em; }
 
+ul.no-bullet {
+  list-style: none; }
+  ul.no-bullet li {
+    list-style: none; }
+
 .top-menu {
   position: absolute;
   top: 0;
   width: 100%;
   background-color: #ff7a00;
-  text-shadow: none; }
+  text-shadow: none;
+  z-index: 1000; }
   .top-menu .row {
     max-width: 100%; }
     .top-menu .row a {
       color: black; }
+  .top-menu.expanded {
+    border-bottom: 1px solid black;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.4); }
 
 .wrapper {
   max-width: 980px;
@@ -9751,3 +9760,6 @@ ul {
   background-color: white;
   height: 100%;
   padding-top: 2em; }
+
+form .cancel {
+  color: gray !important; }
