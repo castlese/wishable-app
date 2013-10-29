@@ -1,0 +1,155 @@
+/**
+ *
+ * Classes having to do with text styles, text layout and appearance.
+ *
+ */
+
+// bug in Android?
+h1, h2, h3, h4, h5, h6, p {
+  text-rendering: auto ! important;
+}
+
+p {
+  margin: 1.5em 0;
+  font-size: 1.15em;
+
+  a {
+    color: $tertiary-highlight;
+
+    &:hover {
+      color: $primary-highlight;
+      @include our-transition;
+    }
+  }
+}
+
+p:first-child {
+  margin-top: 0;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+ul {
+  padding-left: 1em;
+}
+
+/**
+ *
+ * Using ems, make the text larger or smaller relative to it's parent text.
+ *
+ */
+.larger {
+  @include larger;
+}
+
+.smaller {
+  @include smaller;
+}
+
+.tablet-larger {
+  @media screen and (min-width: $tablet-width) {
+    @include larger;
+  }
+}
+
+.tablet-smaller {
+  @media screen and (min-width: $tablet-width) {
+    @include smaller;
+  }
+}
+
+.smartphone-larger {
+  @media screen and (max-width: ($tablet-width - 1)) {
+    @include larger;
+  }
+}
+
+.smartphone-smaller {
+  @media screen and (max-width: ($tablet-width - 1)) {
+    @include smaller;
+  }
+}
+
+/**
+ *
+ * Capitalization
+ *
+ */
+@mixin all-caps {
+  text-transform: uppercase;
+}
+.all-caps {
+  @include all-caps;
+}
+
+@mixin capitalize {
+  text-transform: capitalize;
+}
+.capitalize {
+  @include capitalize;
+}
+
+/**
+ *
+ * Nudge an element up with respect to an element immediately above.
+ *
+ */
+.nudge {
+
+  &.up {
+    margin-top: -.35em ! important;
+
+    &.a-smidge {
+      margin-top: -.15em ! important;
+    }
+
+    &.way {
+      margin-top: -.5em ! important;
+    }
+  }
+
+  &.down {
+    padding-top: .35em ! important;
+
+    &.a-smidge {
+      padding-top: .15em ! important;
+    }
+
+    &.way {
+      padding-top: .5em ! important;
+    }
+  }
+}
+
+/**
+ *
+ * Add some whitespace around the element
+ *
+ */
+.with-space {
+  &.on-left {
+    margin-left: 1em;
+
+    &.a-little {
+      margin-left: .5em;
+    }
+
+    &.lots {
+      margin-left: 2em;
+    }
+  }
+
+  &.on-right {
+    margin-right: 1em;
+
+    &.a-little {
+      margin-right: .5em;
+    }
+
+    &.lots {
+      margin-right: 2em;
+    }
+  }
+}

@@ -1,0 +1,57 @@
+/***
+ *
+ * Color declarations go here.  Remember to use structure / function names, not
+ * color names, unless they are brand specific.
+ *
+ */
+
+$primary-light:         #fff;
+$secondary-light:       darken($primary-light, 5%);
+$tertiary-light:        darken($primary-light, 10%);
+
+$primary-dark:          #000;
+$secondary-dark:        lighten($primary-dark, 20%);
+$tertiary-dark:         lighten($primary-dark, 50%);
+
+$primary-highlight:     #00C322;
+$secondary-highlight:   #FF7A00;
+$tertiary-highlight:    #5FC0CE;
+
+/**
+ * Facebook colors
+ */
+$fb-blue:                               #3b579d;
+$fb-button-gradient-start:              #374b8d;
+$fb-button-gradient-end:                #3b579d;
+$fb-button-highlight-gradient-start:    #455a9e;
+$fb-button-highlight-gradient-end:      #4d6ab2;
+
+.dark-background {
+  background-color: $primary-dark;
+
+  &.secondary {
+    background-color: $secondary-dark;
+  }
+  &.tertiary {
+    background-color: $tertiary-dark;
+  }
+}
+
+.light-background {
+  background-color: $primary-light;
+
+  &.secondary {
+    background-color: $secondary-light;
+  }
+  &.tertiary {
+    background-color: $tertiary-light;
+  }
+}
+
+.highlight-background {
+  background-color: $primary-highlight;
+
+  &.secondary {
+    background-color: $secondary-highlight;
+  }
+}

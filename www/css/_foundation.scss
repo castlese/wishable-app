@@ -1,0 +1,64 @@
+/*****
+ *
+ * Bring in some Zurb Foundation goodness
+ *
+ */
+
+// override some defaults
+$body-bg: $primary-light;
+$body-font-color: $primary-dark;
+$body-font-family: "oxygenregular", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+$header-font-family: "gochi_handregular";
+$header-font-weight: normal;
+$header-font-color: $primary-dark;
+
+$h1-font-size: emCalc(36px);
+$h2-font-size: emCalc(30px);
+$h3-font-size: emCalc(24px);
+$h4-font-size: emCalc(18px);
+$h5-font-size: emCalc(18px);
+$h6-font-size: emCalc(18px);
+
+$primary-color:   $primary-dark;
+$secondary-color: $secondary-dark;
+$alert-color:     $primary-highlight;
+$success-color:   $secondary-highlight;
+
+
+/* We use these to control the background and border styles */
+/*$panel-bg: darken(#fff, 5%);
+$panel-border-style: solid;
+$panel-border-size: 1px;
+*/
+/* We use this % to control how much we darken things on hover */
+/*$panel-function-factor: 10%;
+$panel-border-color: darken($panel-bg, $panel-function-factor);
+*/
+/* We use these to set default inner padding and bottom margin */
+/*$panel-margin-bottom: emCalc(20px);
+$panel-padding: emCalc(20px);
+*/
+/* We use these to set default font colors */
+/*$panel-font-color: #333;
+$panel-font-color-alt: #fff;
+*/
+// import foundation
+@import "./foundation/scss/foundation";
+
+/*.panel {
+  p {
+    margin-left: 1em;
+    margin-right: 1em;
+  }
+}*/
+
+ul.no-bullet {
+  padding-left: 0;
+}
+
+.columns {
+  &.no-padding {
+    padding: 0;
+  }
+}

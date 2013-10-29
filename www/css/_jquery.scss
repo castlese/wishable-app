@@ -1,0 +1,128 @@
+/**
+ *
+ * Override jQuery and jQuery mobile styles here.
+ *
+ */
+
+body {
+  .ui-page {
+    height: 100%;
+
+    .ui-content[data-role='content'] {
+      height: 100%;
+      padding: 0;
+      margin: 0;
+    }
+  }
+
+  &.ui-overlay-c,
+  &.ui-overlay-c .ui-page {
+    @include background(linear-gradient($primary-dark, lighten($primary-dark, 15%)), center repeat $primary-dark scroll);
+  }
+
+  .ui-page .region .ui-link {
+    color: $primary-dark;
+    text-shadow: none;
+  }
+
+  .ui-loader {
+    color: $primary-light;
+
+    h1,h2,h3,h4,h5,h6 {
+      color: $primary-light;
+    }
+  }
+
+  .ui-tabs .ui-tabs-panel {
+    padding: 0;
+  }
+
+  .ui-checkbox-on .ui-icon,
+  .ui-radio-on .ui-icon {
+    background-color: $secondary-highlight;
+  }
+
+  label.ui-btn-corner-all {
+    border-radius: 0;
+  }
+
+  div.ui-btn {
+    @include background(linear-gradient(lighten($secondary-highlight, 20%), $secondary-highlight));
+  }
+
+  /* datepickers */
+  .ui-datepicker {
+    background-color: $tertiary-dark;
+    text-shadow: 1px 1px 1px $tertiary-light;
+    z-index: 1000 ! important;
+
+    .ui-state-active {
+      background-color: $secondary-highlight;
+    }
+
+    .ui-datepicker-unselectable {
+      background-color: $tertiary-dark;
+      color: $secondary-dark;
+    }
+  }
+
+  /* collapsible elements */
+  .ui-collapsible-inset {
+    padding: 0;
+    border-radius: 0;
+
+    .ui-collapsible-heading {
+      > .ui-btn {
+        background: none;
+        background-color: transparent;
+        border-width: 0 0 1px 0 ! important;
+        border-color: $tertiary-light;
+        color: $primary-dark ! important;
+        text-shadow: none;
+
+        &:focus {
+          box-shadow: none;
+        }
+
+        .ui-icon-shadow {
+          box-shadow: none;
+        }
+      }
+    }
+  }
+
+  .ui-body-c,
+  .ui-popup .popup-content {
+    .ui-link {
+      color: $primary-dark;
+
+      &:hover {
+        color: $secondary-dark;
+      }
+      &:visited {
+        color: $primary-dark;
+      }
+    }
+  }
+}
+
+body .ui-body-c,
+.ui-body-c,
+.ui-overlay-c,
+.ui-btn-up-c,
+.ui-btn-hover-c {
+  text-shadow: none;
+
+  &:hover {
+    text-shadow: none;
+  }
+
+  .ui-link {
+    font-weight: normal;
+
+    &:hover {
+      color: $primary-highlight;
+      @include transition (all .5s ease-in-out);
+    }
+  }
+}

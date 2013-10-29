@@ -1,0 +1,40 @@
+/**
+ *
+ * Using ems, make the text larger or smaller relative to it's parent text.
+ *
+ */
+@mixin larger {
+  font-size: 1.5em;
+
+  &.barely {
+    font-size: 1.05em;
+  }
+
+  &.somewhat {
+    font-size: 1.25em;
+  }
+
+  &.much {
+    font-size: 1.75em;
+  }
+}
+
+@mixin smaller {
+  font-size: .8em;
+
+  &.barely {
+    font-size: .95em;
+  }
+
+  &.somewhat {
+    font-size: .9em;
+  }
+
+  &.much {
+    font-size: .65em;
+  }
+}
+
+@mixin our-transition {
+  @include transition (all .5s ease-in-out);
+}
