@@ -14,6 +14,28 @@ var Wishable = Wishable || {
       }
     });
 
+    $('#create-account-form').validate({
+      submitHandler: function(form) {
+        var params = $(form).formParams();
+        Wishable.api.register_user(params, function(data) {
+          if (data) {
+            alert('your account has been created');
+          }
+        });
+      }
+    });
+
+    $('#login-form').validate({
+      submitHandler: function(form) {
+        var params = $(form).formParams();
+        Wishable.api.login(params, function(data) {
+          if (data) {
+            alert('you have logged in');
+          }
+        });
+      }
+    });
+
     Wishable.initialized = true;
   },
 
@@ -32,6 +54,12 @@ var Wishable = Wishable || {
   load_template: function load_template($el, template, values) {
     $el.loadTemplate(template, values);
     $el.trigger('create');
+  },
+
+  show_last_error: function show_last_error() {
+    if (Wishable.api.last_error) {
+      alert(Wishable.api.last_error);
+    }
   },
 
 };
@@ -86,17 +114,6 @@ var Wishable = Wishable || {
     // we're in a browser, so Build has not provided the JS files for FB.
     $(document).ready(function() {
       Wishable.init($, $(document));
-
-      // add honeypot elements to forms
-      $('form').append("<input type='hidden' name='your_name' value='' />");
-      $('form').submit(function(e) {
-        var params = $(this).formParams();
-        if (params['your_name'] !== '') {
-          e.preventDefault();
-          e.stopPropagation();
-          e.stopImmediatePropagation();
-        }
-      });
     });
   }
 
