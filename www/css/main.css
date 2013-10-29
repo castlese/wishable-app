@@ -4652,9 +4652,15 @@ body .top-menu {
 body .wrapper {
   max-width: 980px;
   margin: 0 auto;
-  background-color: white;
   height: 100%;
-  padding-top: 2em; }
+  padding-top: 1.75em;
+  overflow: hidden; }
+  body .wrapper .page-content {
+    overflow: auto;
+    height: 100%;
+    background-color: white; }
+    body .wrapper .page-content .region-main-content {
+      background-color: white; }
 
 .wish-summary-wrapper .wish-summary {
   border: 1px solid #ffbd80;

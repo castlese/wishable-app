@@ -80,6 +80,10 @@ var Wishable = Wishable || {
       }
     });
 
+    if (!Wishable.cordova_present) {
+      $('.page-content').niceScroll();
+    }
+
     Wishable.initialized = true;
   },
 
