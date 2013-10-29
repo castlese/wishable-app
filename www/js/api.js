@@ -3,6 +3,18 @@ Wishable.api = Wishable.api || {
   last_error:   null,
 
   /**
+   * Get a list of the latest wishes
+   *
+   * @method wishes
+   * @param  {Function} callback Callback to receive the data
+   */
+  wishes: function(callback) {
+    Wishable.api.get('wishes', null, null, function(data) {
+      callback(data);
+    });
+  },
+
+  /**
    *
    * GET some data from the server.
    *
@@ -132,7 +144,7 @@ Wishable.api = Wishable.api || {
       },
       contentType: "application/json",
       type:         method,
-      url:          'http://wishable-production.herokuapp.com/' + uri
+      url:          'http://wishable-production.herokuapp.com/v1/' + uri
     };
 
     if (page) {
