@@ -66,7 +66,8 @@ var Wishable = Wishable || {
     $('#donate-form').validate({
       rules: {
         amount: {
-          digits: true
+          required: true,
+          // TODO: also ensure that that 0 < amount < funding total remaining
         }
       },
       submitHandler: function(form) {
