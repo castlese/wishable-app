@@ -1,10 +1,29 @@
 
 .top-menu {
+  position: absolute;
+  top: 0;
   width: 100%;
   background-color: $secondary-highlight;
+  text-shadow: none;
+
+  .row {
+    max-width: 100%;
+
+    a {
+      color: $primary-dark;
+    }
+  }
 }
 
 .wrapper {
   max-width: 980px;
   margin: 0 auto;
+  background-color: $primary-light;
+  height: 100%;
+  padding-top: 2em;
+
+  .page-content {
+    .region-main-content {
+    }
+  }
 }

@@ -1,9 +1,39 @@
 var Wishable = Wishable || {
-  initialized:  false,
+  initialized:      false,
+  cordova_present:  (typeof window.cordova != 'undefined'),
 
-  init:   function init() {
+  init:   function init($, $context) {
+    $('#create-wish-form').validate({
+      submitHandler: function(form) {
+        var params = $(form).formParams();
+        Wishable.api.create_wish(params, function(data) {
+          if (data) {
+            alert('your wish has been created');
+          }
+        });
+      }
+    });
 
-  }
+    Wishable.initialized = true;
+  },
+
+  unprocessed: function unprocessed(selector, $context, label) {
+    var test = 'wishable-processed';
+    if (label) {
+      test += '-' + label;
+    }
+
+    var $el = $(selector + ':not(.' + test  + ')', $context);
+    $el.addClass(test);
+
+    return $el;
+  },
+
+  load_template: function load_template($el, template, values) {
+    $el.loadTemplate(template, values);
+    $el.trigger('create');
+  },
+
 };
 
 (function($) {
@@ -12,9 +42,62 @@ var Wishable = Wishable || {
 
     // if this is an object, we're interested
     if (typeof($page) == 'object') {
+      // insert the top menu as necessary
+      Wishable.unprocessed('.top-menu', $page).each(function() {
+        Wishable.load_template($(this), '#top-menu');
+      });
+
       if ($page.attr('id') == 'wishes') {
         Wishable.wishes.index();
       }
     }
   });
+
+  /**
+   *
+   * Place handlers for when the document has been loaded here.
+   *
+   */
+  if (Wishable.cordova_present) {
+    // deviceready is not reliably firing on Android, though it seems
+    // Cordova is running correctly, so check in after 2 seconds and initialize
+    // without the deviceready event if Temptster hasn't already been initialized
+    document.addEventListener('deviceready', function() {
+      FastClick.attach(document.body);
+    }, false);
+
+    // Device event handlers
+    document.addEventListener('resume', function() {
+    });
+
+    document.addEventListener('pause', function() {
+    });
+
+    document.addEventListener("menubutton", function() {
+    }, false);
+
+    document.addEventListener("online", function() {
+    }, false);
+
+    document.addEventListener("offline", function() {
+    }, false);
+  }
+  else {
+    // we're in a browser, so Build has not provided the JS files for FB.
+    $(document).ready(function() {
+      Wishable.init($, $(document));
+
+      // add honeypot elements to forms
+      $('form').append("<input type='hidden' name='your_name' value='' />");
+      $('form').submit(function(e) {
+        var params = $(this).formParams();
+        if (params['your_name'] !== '') {
+          e.preventDefault();
+          e.stopPropagation();
+          e.stopImmediatePropagation();
+        }
+      });
+    });
+  }
+
 })(jQuery);

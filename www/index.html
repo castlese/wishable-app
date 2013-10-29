@@ -31,7 +31,7 @@
             <div class="region region-main-content">
               <div class="row">
                 <div class="small-12 columns">
-                  <h1>
+                  <h1 class="text-center">
                     Wishable
                   </h1>
                 </div>
@@ -67,7 +67,7 @@
             <div class="region region-main-content">
               <div class="row">
                 <div class="small-12 columns">
-                  <h1>
+                  <h1 class="text-center">
                     Login
                   </h1>
                 </div>
@@ -109,7 +109,7 @@
             <div class="region region-main-content">
               <div class="row">
                 <div class="small-12 columns">
-                  <h1>
+                  <h1 class="text-center">
                     Create an account
                   </h1>
                 </div>
@@ -149,12 +149,24 @@
         <div class="wrapper">
           <div class="page-content">
             <div class="region region-main-content">
-              <h1>
-                Create your wish
-              </h1>
-              <p>
-                Short text explaining what this does.
-              </p>
+              <div class="row">
+                <div class="small-12 columns">
+                  <h1 class="text-center">
+                    Create your wish
+                  </h1>
+                  <p>
+                    Short text explaining what this does.
+                  </p>
+                  <form id="create-wish-form">
+                    <div class="field">
+                      <label for="create-wish-title">Title</label><input id="create-wish-title" name="title" required="required" type="text" />
+                    </div>
+                    <div class="submit">
+                      <input type="submit" value="create your wish" /><a class="cancel" data-rel="back">Cancel</a>
+                    </div>
+                  </form>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -166,13 +178,37 @@
         <div class="wrapper">
           <div class="page-content">
             <div class="region region-main-content">
-              <h1>
-                Fund a wish
-              </h1>
-              <p>
-                Short text explaining what this does.
-              </p>
-              <div id="wish-list"></div>
+              <div class="row">
+                <div class="small-12 columns">
+                  <h1 class="text-center">
+                    Fund a wish
+                  </h1>
+                  <p>
+                    Short text explaining what this does.
+                  </p>
+                  <div id="wish-list"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="transparent" data-role="page" id="wish">
+      <div data-role="content">
+        <div class="top-menu"></div>
+        <div class="wrapper">
+          <div class="page-content">
+            <div class="region region-main-content">
+              <div class="row">
+                <div class="small-12 columns">
+                  <h1 class="text-center" data-content="title"></h1>
+                  <h2>
+                    Description
+                  </h2>
+                  <div class="wish-description" data-content="description"></div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -180,21 +216,12 @@
     </div>
   </body>
   <div id="templates">
-    <script id="header-menu" type="text/html">
+    <script id="top-menu" type="text/html">
       <div class="row">
-        <div class="small-12 columns">
-          <div class="field">
-            <div class="image-preview"></div>
-            <div class="help">
-              <p>
-                Drop a file here or click 'Browse' to upload your image.
-              </p>
-            </div>
-            <div class="image-field"></div>
-            <div class="image-progress">
-              <div class="image-progress-indicator"></div>
-            </div>
-          </div>
+        <div class="small-4 columns">
+          <p>
+            <a href="#settings">menu</a>
+          </p>
         </div>
       </div>
     </script>

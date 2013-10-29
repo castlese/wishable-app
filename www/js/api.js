@@ -93,7 +93,7 @@ Wishable.api = Wishable.api || {
 
       callback(data);
     });
-  }
+  },
 
   /**
    *

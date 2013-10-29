@@ -35,7 +35,7 @@ html lang='en-US'
             .region.region-main-content
               .row
                 .small-12.columns
-                  h1 Wishable
+                  h1.text-center Wishable
               .row
                 .small-12.columns
                   p Short text explaining what this does.
@@ -55,7 +55,7 @@ html lang='en-US'
             .region.region-main-content
               .row
                 .small-12.columns
-                  h1 Login
+                  h1.text-center Login
               .row
                 .small-12.columns
                   form#login
@@ -82,7 +82,7 @@ html lang='en-US'
             .region.region-main-content
               .row
                 .small-12.columns
-                  h1 Create an account
+                  h1.text-center Create an account
               .row
                 .small-12.columns
                   form#login
@@ -107,8 +107,19 @@ html lang='en-US'
         .wrapper
           .page-content
             .region.region-main-content
-              h1 Create your wish
-              p Short text explaining what this does.
+              .row
+                .small-12.columns
+                  h1.text-center Create your wish
+                  p Short text explaining what this does.
+
+                  form#create-wish-form
+                    .field
+                      label for='create-wish-title' Title
+                      input#create-wish-title name='title' type='text' required=true
+
+                    .submit
+                      input type='submit' value='create your wish'
+                      a.cancel data-rel='back' Cancel
 
     #wishes.transparent data-role="page"
       div data-role="content"
@@ -116,10 +127,26 @@ html lang='en-US'
         .wrapper
           .page-content
             .region.region-main-content
-              h1 Fund a wish
-              p Short text explaining what this does.
+              .row
+                .small-12.columns
+                  h1.text-center Fund a wish
+                  p Short text explaining what this does.
 
-              #wish-list
+                  #wish-list
+
+    #wish.transparent data-role="page"
+      div data-role="content"
+        .top-menu
+        .wrapper
+          .page-content
+            .region.region-main-content
+              .row
+                .small-12.columns
+                  h1.text-center data-content='title'
+
+                  h2 Description
+                  .wish-description data-content='description'
+
 
   //////////////////////////////////////////////////
   //
@@ -129,18 +156,11 @@ html lang='en-US'
   #templates
 
     ///////////////////// Top menu
-    script type='text/html' id='header-menu'
+    script type='text/html' id='top-menu'
       .row
-        .small-12.columns
-          .field
-            .image-preview
-            .help
-              p Drop a file here or click 'Browse' to upload your image.
-            .image-field
-            .image-progress
-              .image-progress-indicator
-
-
+        .small-4.columns
+          p
+            a href='#settings' menu
 
   // PhoneGap Build files necessary for the app.
   // These are not required or present in the web app.
