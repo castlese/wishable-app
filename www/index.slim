@@ -35,7 +35,7 @@ html lang='en-US'
             .region.region-main-content
               .row
                 .small-12.columns
-                  h1 Wishable
+                  h1.text-center Wishable
               .row
                 .small-12.columns
                   p Short text explaining what this does.
@@ -55,18 +55,18 @@ html lang='en-US'
             .region.region-main-content
               .row
                 .small-12.columns
-                  h1 Login
+                  h1.text-center Login
               .row
                 .small-12.columns
                   form#login
                     .row.field
                       .small-12.columns
                         label for='login-username' User name or email
-                        input#login-username name='login' type='text' required='required'
+                        input#login-username name='login' type='text' required=true
                     .row.field
                       .small-12.columns
                         label for='login-password' Password
-                        input#login-password name='password' type='password' required='required'
+                        input#login-password name='password' type='password' required=true
                     .row.submit
                       .small-12.columns
                         .btn
@@ -82,26 +82,18 @@ html lang='en-US'
             .region.region-main-content
               .row
                 .small-12.columns
-                  h1 Create an account
+                  h1.text-center Create an account
               .row
                 .small-12.columns
-                  form#create_user
+                  form#create-account-form
                     .row.field
                       .small-12.columns
-                        label for='user-username' User name or email
-                        input#user-username name='login' type='text' required='required'
-                    .row.field 
-                      .small-12.columns
-                        label for='user-email' Email
-                        input#user-email name='email' type='text'
+                        label for='login-email' Email
+                        input#login-username name='email' type='text' required=true
                     .row.field
                       .small-12.columns
-                        label for='user-password' Password
-                        input#user-password name='password' type='password'
-                    .row.field
-                      .small-12.columns
-                        label for='user-password' Password again
-                        input#user-password name='password' type='password'
+                        label for='login-password' Password
+                        input#login-password name='password' type='password' required=true
                     .row.submit
                       .small-12.columns
                         .btn
@@ -124,8 +116,8 @@ html lang='en-US'
                   form#create_wish
                     .row.field
                       .small-12.columns
-                        label for='wish-title' Title of your wish
-                        input#wish-title name='title' type='text'
+                        label for='create-wish-title' Title
+                        input#create-wish-title name='title' type='text' required=true
                     .row.field
                       .small-12.columns
                         label for='wish-cost' How much will it cost?
@@ -136,8 +128,9 @@ html lang='en-US'
                         textarea#wish-text name='text' rows='5' cols='40'
                     .row.field
                       .small-12.columns
-                        .btn
-                          input#wish-submit type='submit' value='Make a wish!'
+                        .submit
+                          input type='submit' value='create your wish'
+                          a.cancel data-rel='back' Cancel
                            
 
     #wishes.transparent data-role="page"
@@ -168,9 +161,21 @@ html lang='en-US'
                       .btn
                         input#donation-submit type='submit' value='Donate'
 
+                  #wish-list
 
+    #wish.transparent data-role="page"
+      div data-role="content"
+        .top-menu
+        .wrapper
+          .page-content
+            .region.region-main-content
+              .row
+                .small-12.columns
+                  h1.text-center data-content='title'
 
-              #wish-list
+                  h2 Description
+                  .wish-description data-content='description'
+
 
   //////////////////////////////////////////////////
   //
@@ -180,18 +185,11 @@ html lang='en-US'
   #templates
 
     ///////////////////// Top menu
-    script type='text/html' id='header-menu'
+    script type='text/html' id='top-menu'
       .row
-        .small-12.columns
-          .field
-            .image-preview
-            .help
-              p Drop a file here or click 'Browse' to upload your image.
-            .image-field
-            .image-progress
-              .image-progress-indicator
-
-
+        .small-4.columns
+          p
+            a href='#settings' menu
 
   // PhoneGap Build files necessary for the app.
   // These are not required or present in the web app.

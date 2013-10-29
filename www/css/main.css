@@ -3,6 +3,34 @@
  * Standard sizes for stuff
  *
  */
+/***
+ *
+ * Color declarations go here.  Remember to use structure / function names, not
+ * color names, unless they are brand specific.
+ *
+ */
+/**
+ * Facebook colors
+ */
+.dark-background {
+  background-color: black; }
+  .dark-background.secondary {
+    background-color: #333333; }
+  .dark-background.tertiary {
+    background-color: gray; }
+
+.light-background {
+  background-color: white; }
+  .light-background.secondary {
+    background-color: #f2f2f2; }
+  .light-background.tertiary {
+    background-color: #e6e6e6; }
+
+.highlight-background {
+  background-color: #00c322; }
+  .highlight-background.secondary {
+    background-color: #ff7a00; }
+
 /**********
  *
  * Standard sizes for stuff
@@ -5173,34 +5201,6 @@ ul {
 .with-space.on-right.lots {
   margin-right: 2em; }
 
-/***
- *
- * Color declarations go here.  Remember to use structure / function names, not
- * color names, unless they are brand specific.
- *
- */
-/**
- * Facebook colors
- */
-.dark-background {
-  background-color: black; }
-  .dark-background.secondary {
-    background-color: #333333; }
-  .dark-background.tertiary {
-    background-color: gray; }
-
-.light-background {
-  background-color: white; }
-  .light-background.secondary {
-    background-color: #f2f2f2; }
-  .light-background.tertiary {
-    background-color: #e6e6e6; }
-
-.highlight-background {
-  background-color: #00c322; }
-  .highlight-background.secondary {
-    background-color: #ff7a00; }
-
 /*****
  *
  * Bring in some Zurb Foundation goodness
@@ -9495,6 +9495,104 @@ ul.no-bullet {
 
 /**
  *
+ * Override jQuery and jQuery mobile styles here.
+ *
+ */
+body {
+  /* datepickers */
+  /* collapsible elements */ }
+  body .ui-content {
+    padding: 0; }
+  body .ui-page {
+    height: 100%; }
+    body .ui-page .ui-content[data-role='content'] {
+      height: 100%;
+      padding: 0;
+      margin: 0; }
+  body.ui-overlay-c, body.ui-overlay-c .ui-page {
+    background-color: black;
+    background: -webkit-linear-gradient( black, #262626), center repeat black scroll;
+    background: linear-gradient( black, #262626), center repeat black scroll; }
+  body .ui-page .region .ui-link {
+    color: black;
+    text-shadow: none; }
+  body .ui-loader {
+    color: white; }
+    body .ui-loader h1, body .ui-loader h2, body .ui-loader h3, body .ui-loader h4, body .ui-loader h5, body .ui-loader h6 {
+      color: white; }
+  body .ui-tabs .ui-tabs-panel {
+    padding: 0; }
+  body .ui-checkbox-on .ui-icon,
+  body .ui-radio-on .ui-icon {
+    background-color: #ff7a00; }
+  body label.ui-btn-corner-all {
+    border-radius: 0; }
+  body div.ui-btn {
+    background: -webkit-linear-gradient( #ffaf66, #ff7a00);
+    background: linear-gradient( #ffaf66, #ff7a00); }
+  body .ui-datepicker {
+    background-color: gray;
+    text-shadow: 1px 1px 1px #e6e6e6;
+    z-index: 1000 !important; }
+    body .ui-datepicker .ui-state-active {
+      background-color: #ff7a00; }
+    body .ui-datepicker .ui-datepicker-unselectable {
+      background-color: gray;
+      color: #333333; }
+  body .ui-collapsible-inset {
+    padding: 0;
+    border-radius: 0; }
+    body .ui-collapsible-inset .ui-collapsible-heading > .ui-btn {
+      background: none;
+      background-color: transparent;
+      border-width: 0 0 1px 0 !important;
+      border-color: #e6e6e6;
+      color: black !important;
+      text-shadow: none; }
+      body .ui-collapsible-inset .ui-collapsible-heading > .ui-btn:focus {
+        box-shadow: none; }
+      body .ui-collapsible-inset .ui-collapsible-heading > .ui-btn .ui-icon-shadow {
+        box-shadow: none; }
+  body .ui-body-c .ui-link,
+  body .ui-popup .popup-content .ui-link {
+    color: black; }
+    body .ui-body-c .ui-link:hover,
+    body .ui-popup .popup-content .ui-link:hover {
+      color: #333333; }
+    body .ui-body-c .ui-link:visited,
+    body .ui-popup .popup-content .ui-link:visited {
+      color: black; }
+
+body .ui-body-c,
+.ui-body-c,
+.ui-overlay-c,
+.ui-btn-up-c,
+.ui-btn-hover-c {
+  text-shadow: none; }
+  body .ui-body-c:hover,
+  .ui-body-c:hover,
+  .ui-overlay-c:hover,
+  .ui-btn-up-c:hover,
+  .ui-btn-hover-c:hover {
+    text-shadow: none; }
+  body .ui-body-c .ui-link,
+  .ui-body-c .ui-link,
+  .ui-overlay-c .ui-link,
+  .ui-btn-up-c .ui-link,
+  .ui-btn-hover-c .ui-link {
+    font-weight: normal; }
+    body .ui-body-c .ui-link:hover,
+    .ui-body-c .ui-link:hover,
+    .ui-overlay-c .ui-link:hover,
+    .ui-btn-up-c .ui-link:hover,
+    .ui-btn-hover-c .ui-link:hover {
+      color: #00c322;
+      -webkit-transition: all 0.5s ease-in-out;
+      -moz-transition: all 0.5s ease-in-out;
+      transition: all 0.5s ease-in-out; }
+
+/**
+ *
  * Using ems, make the text larger or smaller relative to it's parent text.
  *
  */
@@ -9637,9 +9735,19 @@ ul {
     margin-right: 2em; }
 
 .top-menu {
+  position: absolute;
+  top: 0;
   width: 100%;
-  background-color: #ff7a00; }
+  background-color: #ff7a00;
+  text-shadow: none; }
+  .top-menu .row {
+    max-width: 100%; }
+    .top-menu .row a {
+      color: black; }
 
 .wrapper {
   max-width: 980px;
-  margin: 0 auto; }
+  margin: 0 auto;
+  background-color: white;
+  height: 100%;
+  padding-top: 2em; }
